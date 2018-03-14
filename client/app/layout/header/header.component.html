@@ -1,0 +1,163 @@
+<!-- START Top Navbar-->
+<nav class="navbar topnavbar" role="navigation">
+    <!-- START navbar header-->
+    <div class="navbar-header">
+        <a class="navbar-brand" href="#/">
+            <div class="brand-logo">
+                <img class="img-responsive" src="assets/img/logo.png" alt="Adscash.io" />
+            </div>
+            <div class="brand-logo-collapsed">
+                <img class="img-responsive" src="assets/img/logo-single.png" alt="Adscash.io" />
+            </div>
+        </a>
+    </div>
+    <!-- END navbar header-->
+    <!-- START Nav wrapper-->
+    <div class="nav-wrapper">
+        <!-- START Left navbar-->
+        <!-- <ul class="nav navbar-nav">
+        </ul> -->
+        <!-- END Left navbar-->
+        <!-- START Right Navbar-->
+        <ul class="nav navbar-nav navbar-right" *ngIf="!isAdmin">
+            <li *ngIf="!isUserLoggedIn || !isLoggedIn">
+                <a  title="Home" [routerLink]="'home'">
+                    Home
+                </a>
+            </li>
+            <li *ngIf="isUserLoggedIn && isLoggedIn">
+                <a title="Dashboard" [routerLink]="!secretPage ? 'dashboard' : null" [ngClass]="{'is-active' : secretPage}">
+                    Dashboard
+                </a>
+            </li>
+            <li *ngIf="isUserLoggedIn && isLoggedIn">
+                <a  title="Check Balance" [routerLink]="!secretPage ? 'transaction/balance' : null" [ngClass]="{'is-active' : secretPage}">
+                    Check Balance
+                </a>
+            </li>
+            <li>
+                <a  title="Security" [routerLink]="!secretPage ? 'page/security' : null" [ngClass]="{'is-active' : secretPage}">
+                    Security
+                </a>
+            </li>
+            <li>
+                <a  title="Plans" [routerLink]="!secretPage ? 'page/plans' : null" [ngClass]="{'is-active' : secretPage}">
+                    Plans
+                </a>
+            </li>
+            <li>
+                <a  title="Support" [routerLink]="!secretPage ? 'page/support' : null" [ngClass]="{'is-active' : secretPage}">
+                    Support
+                </a>
+            </li>
+            <li>
+                <a  title="For Developers" [routerLink]="!secretPage ? 'page/developer' : null" [ngClass]="{'is-active' : secretPage}">
+                    For Developers
+                </a>
+            </li>
+            <li *ngIf="isUserLoggedIn && isLoggedIn">
+                <a  title="Settings" [routerLink]="!secretPage ? 'page/settings' : null" [ngClass]="{'is-active' : secretPage}">
+                    Settings
+                </a>
+            </li>
+            <li *ngIf="!isUserLoggedIn || !isLoggedIn">
+                <a  title="Login" [routerLink]="'auth/login'">
+                    Login
+                </a>
+            </li>
+            <li *ngIf="!isUserLoggedIn || !isLoggedIn">
+                <a  title="Signup" [routerLink]="'auth/register'">
+                    Signup
+                </a>
+            </li>
+            <li *ngIf="isUserLoggedIn && isLoggedIn">
+                <a  title="Logout" (click)="logout()">
+                    Logout
+                </a>
+            </li>
+
+            <!-- Search icon-->
+            <!-- <li>
+                <a (click)="openNavSearch($event)">
+                    <em class="icon-magnifier"></em>
+                </a>
+            </li> -->
+            <!-- START Alert menu-->
+            <!-- <li class="dropdown dropdown-list" dropdown> -->
+                <!-- <a dropdownToggle>
+                    <em class="icon-bell"></em>
+                    <div class="label label-danger">11</div>
+                </a> -->
+                <!-- START Dropdown menu-->
+                <!-- <ul *dropdownMenu class="dropdown-menu animated flipInX">
+                    <li>
+                        <div class="list-group">
+                            <a class="list-group-item">
+                                <div class="media-box">
+                                    <div class="pull-left">
+                                        <em class="fa fa-twitter fa-2x text-info"></em>
+                                    </div>
+                                    <div class="media-box-body clearfix">
+                                        <p class="m0">New followers</p>
+                                        <p class="m0 text-muted">
+                                            <small>1 new follower</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="list-group-item">
+                                <div class="media-box">
+                                    <div class="pull-left">
+                                        <em class="fa fa-envelope fa-2x text-warning"></em>
+                                    </div>
+                                    <div class="media-box-body clearfix">
+                                        <p class="m0">New e-mails</p>
+                                        <p class="m0 text-muted">
+                                            <small>You have 10 new emails</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="list-group-item">
+                                <div class="media-box">
+                                    <div class="pull-left">
+                                        <em class="fa fa-tasks fa-2x text-success"></em>
+                                    </div>
+                                    <div class="media-box-body clearfix">
+                                        <p class="m0">Pending Tasks</p>
+                                        <p class="m0 text-muted">
+                                            <small>11 pending task</small>
+                                        </p>
+                                    </div>
+                                </div>
+                            </a>
+                            <a class="list-group-item">
+                                <small translate="topbar.notification.MORE">More notifications</small>
+                                <span class="label label-danger pull-right">14</span>
+                            </a>
+                        </div>
+                    </li>
+                </ul>  -->
+            <!-- </li> -->
+            <!-- END Alert menu-->
+            <!-- START Offsidebar button-->
+            <!-- <li>
+                <a (click)="toggleOffsidebar()">
+                    <em class="icon-notebook"></em>
+                </a>
+            </li> -->
+            <!-- END Offsidebar menu-->
+        </ul>
+        <ul class="nav navbar-nav navbar-right" *ngIf="isAdmin">
+            <li>
+                <a  title="Logout" (click)="logout()">
+                    Logout
+                </a>
+            </li>
+        </ul>
+        <!-- END Right Navbar-->
+    </div>
+    <!-- END Nav wrapper-->
+
+</nav>
+<!-- END Top Navbar-->
